@@ -1,11 +1,11 @@
 FROM python:3.10
 # FROM jupyter/scipy-notebook
 
-WORKDIR /project
-
 COPY . /project
 
-RUN pip install -r requirement.txt
+WORKDIR /project
+
+RUN pip install -r /project/requirements.txt
 # RUN command pip install pickle
 
 EXPOSE $PORT
