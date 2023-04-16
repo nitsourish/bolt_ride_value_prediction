@@ -40,4 +40,4 @@ def ride_value_estimator():
         return 'Content-Type not supported!'
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=8000, debug=True,host='0.0.0.0')
