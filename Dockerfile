@@ -6,8 +6,9 @@ COPY . /project
 WORKDIR /project
 
 RUN pip install -r /project/requirements.txt
+RUN pip install gunicorn
 # RUN command pip install pickle
 
 EXPOSE $PORT
-RUN python3 /project/app.py
-# CMD gunicorn --worker=4 --bind 0.0.0.0:$PORT app:app
+# RUN python3 /project/app.py
+CMD gunicorn --worker=4 --bind 0.0.0.0:$PORT app:app
