@@ -11,4 +11,4 @@ RUN pip install gunicorn
 
 EXPOSE $PORT
 # RUN python3 /project/app.py
-CMD gunicorn --worker=4 --bind 0.0.0.0:$PORT app:app
+CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
