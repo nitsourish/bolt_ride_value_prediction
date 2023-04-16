@@ -17,11 +17,13 @@ from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from RideValue import RideValueTransformer
 
+app = Flask(__name__)
+
 with open('lgb_estimator.pkl',"rb") as fin:
     estimator = pickle.load(fin) 
 
-app = Flask(__name__)
-@app.route('/predict-ride-value', methods=['POST'])
+
+@app.route('/ride_value_estimator', methods=['POST'])
 def ride_value_estimator():
     content_type = request.headers.get('Content-Type')
     if content_type == 'application/json':
